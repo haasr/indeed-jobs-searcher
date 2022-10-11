@@ -48,7 +48,7 @@ will allows us to isolate our dependencies.
 1. First, open your terminal to the main folder of this cloned repository and make sure you
 have the virtualenv package installed:
 
-``pip install --user virtualenv```
+``pip install --user virtualenv``
 
 In Ubuntu-based distributions, you can install it using:
 
