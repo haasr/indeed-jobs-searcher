@@ -21,7 +21,7 @@ def print_usage():
         
         f"\n\n{colors['green']}Usage (batch search):      jobsearch.py -c <locations CSV file> {colors['yellow']}[options]{colors['white']}"
         f"\n  {colors['yellow']}Options:{colors['white']}"
-        f"\n    {colors['yellow']}-u{colors['white']}, {colors['yellow']}--url {colors['cyan']}<Indeed URL>{colors['white']} Taylor URL to country."
+        f"\n    {colors['yellow']}-u{colors['white']}, {colors['yellow']}--url {colors['cyan']}<Indeed URL>{colors['white']} Tailor URL to country."
         f"\n    {colors['yellow']}-s{colors['white']}, {colors['yellow']}--save {colors['cyan']}<boolean>{colors['white']}   True if unspecified. False if false value is given."
         f"\n    {colors['yellow']}--startindex {colors['cyan']}<int>{colors['white']}     0-based row index in CSV file to start from (inclusive)."
         f"\n    {colors['yellow']}--stopindex  {colors['cyan']}<int>{colors['white']}     0-based row index in CSV file to stop after (inclusive)."
