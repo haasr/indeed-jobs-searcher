@@ -15,7 +15,7 @@ CSV file of cities by printing out a dataframe from my analysis and then I plug 
 each location into an Excel workbook which I can import with `pandas` for the next phase in my analysis.
 
 As a current Natural Language Processing (NLP) student, I am interested in ameliorating the usefulness of this program by using sentiment
-analysis and classification (perhaps via a neural net) to help gague the viability of jobs per location. Unfortunately that will probably
+analysis and classification (perhaps via a neural net) to help gague the viability of jobs per location. Unfortunately, that will probably
 happen in the distant future as I barely have sufficient time to write this readme file.
 
 .. image:: ./readme_images/job-search-showcase.png
@@ -32,7 +32,7 @@ My examples use the command `python3` which is specific to Linux. If you are usi
 Requirements
 ############
 
-- Device with Internet access and Chrome browser installed
+- Device with Internet access and Google Chrome web browser installed
 - Python 3.10.6 on device
 
 Setup
