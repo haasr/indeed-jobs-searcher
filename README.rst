@@ -12,7 +12,7 @@ From there I scaled up for my needs. I am using my data analytics skills to comp
 after I graduate (based on a number of factors: different measures of diversity, cost of living, proximity to friends and family, etc.).
 Part of my analysis is figuring out which of my prospective cities has the jobs I'm looking for. Hence this project was born. I derive a
 CSV file of cities by printing out a dataframe from my analysis and then I plug it into my jobs searcher to capture available jobs for
-each location into an Excel workbook which I can import with `pandas` for the next phase in my analysis.
+each location into an Excel workbook which I can import with ``pandas`` for the next phase in my analysis.
 
 As a current Natural Language Processing (NLP) student, I am interested in ameliorating the usefulness of this program by using sentiment
 analysis and classification (perhaps via a neural net) to help gague the viability of jobs per location. Unfortunately, that will probably
@@ -69,7 +69,7 @@ In Ubuntu-based distributions, you can install it using:
 
 3b. In Linux:
 
-``source venv/bin/activate```
+``source venv/bin/activate``
 
 To deactivate it (when you want to use your user Python environment), simply type
 ``deactivate``.
@@ -101,7 +101,7 @@ Refer to the following image as a reference:
 Execute!
 --------
 
-Refer to the `help menu` depicted below by running `python3 jobsearch.py -h`.
+Refer to the ``help menu`` depicted below by running ``python3 jobsearch.py -h``.
 
 .. code-block::
 
@@ -153,7 +153,7 @@ All files are saved in the job_searches folder. For more information, refer to t
 Bulk Search Example
 ###################
 
-Understanding `startindex`, `stopindex`
+Understanding ``startindex``, ``stopindex``
 ---------------------------------------
 
 Assume we execute the script as such:
@@ -169,7 +169,7 @@ Next we enter our job query. You can use boolean logic if you'd like:
     Enter your query >>"mechanical" and "engineer" and not "electrical"
 
 The indexing is zero-based (as a programmer, it's the only way for me!). What that means is that the second, third, and fourth
-locations in the file will be searched (the `stopindex` is inclusive):
+locations in the file will be searched (the ``stopindex`` is inclusive):
 
 *locations/indeed_job_search_locations.csv*
 
@@ -187,10 +187,10 @@ locations in the file will be searched (the `stopindex` is inclusive):
 The Results
 -----------
 
-The results are stored in the `searched_jobs` folder. The first part of each file name (before the underscore) is a timestamp
+The results are stored in the ``searched_jobs`` folder. The first part of each file name (before the underscore) is a timestamp
 of when the data was scraped.
 
-The scraped job-search data are stored in the Excel workbook with `bulk-job-searches.xlsx` in its name. Each sheet in the workbook
+The scraped job-search data are stored in the Excel workbook with ``bulk-job-searches.xlsx`` in its name. Each sheet in the workbook
 features the results for each location searched from the locations CSV file.
 
 .. image:: ./readme_images/job-search-results.png
@@ -199,7 +199,7 @@ features the results for each location searched from the locations CSV file.
 
 
 The locations searched, the entered job query, and the resulting URLs from which the results were scraped are stored in the Excel
-workbook with `bulk-urls-searched.xlsx` in its name.
+workbook with ``bulk-urls-searched.xlsx`` in its name.
 
 .. image:: ./readme_images/url-search-results.png
     :width: 620
