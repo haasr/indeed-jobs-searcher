@@ -147,7 +147,7 @@ Refer to the ``help menu`` depicted below by running ``python3 jobsearch.py -h``
 
 Saved Files
 ###########
-All files are saved in the job_searches folder. For more information, refer to the **Bulk Search Example** below.
+All files are saved in the **job_searches** folder. For more information, refer to the **Bulk Search Example** below.
 
 
 Bulk Search Example
