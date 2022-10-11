@@ -26,7 +26,7 @@ happen in the distant future as I barely have sufficient time to write this read
 A Note for the Instructions
 ###########################
 
-My examples use the command `python3` which is specific to Linux. If you are using Windows, simply use `python` instead.
+My examples use the command ``python3`` which is specific to Linux. If you are using Windows, simply use ``python`` instead.
 
 
 Requirements
