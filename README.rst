@@ -23,6 +23,9 @@ happen in the distant future as I barely have sufficient time to write this read
     :alt: Showcase screenshots of command-line interface and results
 
 
+.. contents:: Contents
+
+
 A Note for the Instructions
 ###########################
 
