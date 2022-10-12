@@ -210,7 +210,7 @@ Single Searches
 ################
 
 A single search produces a similar Excel workbook file but for convenience, the worksheet also has a URL column listing the URL
-of the page which the program scraped its results from.
+of the page from which the program scraped its results.
 
 **NOTE**: When you perform a single search, if your location is more than one word, it is important that you enclose your query in quotation marks, e.g.,
 
