@@ -11,8 +11,8 @@ and storing useful job information from Indeed, using Selenium and BeautifulSoup
 From there I scaled up for my needs. I am using my data analytics skills to compile a list of top cities where I wish to live and work
 after I graduate (based on several factors: different measures of diversity, cost of living, proximity to friends and family, etc.).
 Part of my analysis is figuring out which of my prospective cities has the jobs I'm looking for. Hence this project was born. I derive a
-CSV file of cities by printing out a ``DataFrame`` from my analysis and then I plug it into my jobs searcher to capture available jobs for
-each location into an Excel workbook which I can import with ``pandas`` for the next phase in my analysis.
+CSV file of cities by printing out a ``DataFrame`` from my analysis and then I plug the CSV file into my jobs searcher to capture available
+jobs for each location into an Excel workbook which I can import with ``pandas`` for the next phase in my analysis.
 
 As a current Natural Language Processing (NLP) student, I am interested in ameliorating the usefulness of this program by using sentiment
 analysis and classification (perhaps via a neural net) to help gauge the viability of jobs per location. Unfortunately, that will probably
