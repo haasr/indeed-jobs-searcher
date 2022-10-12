@@ -16,7 +16,7 @@ def print_usage():
         f"{colors['green']}Usage (help):              jobsearch.py -h, jobsearch.py --help{colors['white']}"
         f"\n\n{colors['green']}Usage (single search):     jobsearch.py -l \"<location name>\" {colors['yellow']}[options]{colors['white']}"
         f"\n  {colors['yellow']}Options:{colors['white']}"
-        f"\n    {colors['yellow']}-u{colors['white']}, {colors['yellow']}--url {colors['cyan']}<Indeed URL>{colors['white']} Taylor URL to country."
+        f"\n    {colors['yellow']}-u{colors['white']}, {colors['yellow']}--url {colors['cyan']}<Indeed URL>{colors['white']} Tailor URL to country."
         f"\n    {colors['yellow']}-s{colors['white']}, {colors['yellow']}--save {colors['cyan']}<boolean>{colors['white']}   True if unspecified. False if false value is given."
         
         f"\n\n{colors['green']}Usage (batch search):      jobsearch.py -c <locations CSV file> {colors['yellow']}[options]{colors['white']}"
