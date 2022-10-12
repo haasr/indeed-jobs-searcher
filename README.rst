@@ -6,21 +6,21 @@ Simple CLI-based tool for extracting and storing relevant job info. from bulk jo
 
 It would be remiss of me if I didn't say that I used Sidharth's project (explained here: https://www.pycodemates.com/2022/01/Indeed-jobs-scraping-with-python-bs4-selenium-and-pandas.html)
 as the base of this job searcher. Running Sidharth's code showed me a workable proof of concept (after tweaking the code) for extracting
-and storing useful job information from Indeed, using Selenium and BeautifulSoup -- neither one of which I have much experience.
+and storing useful job information from Indeed, using Selenium and BeautifulSoup -- neither one of which I have much experience with.
 
 From there I scaled up for my needs. I am using my data analytics skills to compile a list of top cities where I wish to live and work
-after I graduate (based on a number of factors: different measures of diversity, cost of living, proximity to friends and family, etc.).
+after I graduate (based on several factors: different measures of diversity, cost of living, proximity to friends and family, etc.).
 Part of my analysis is figuring out which of my prospective cities has the jobs I'm looking for. Hence this project was born. I derive a
-CSV file of cities by printing out a dataframe from my analysis and then I plug it into my jobs searcher to capture available jobs for
+CSV file of cities by printing out a ``DataFrame`` from my analysis and then I plug it into my jobs searcher to capture available jobs for
 each location into an Excel workbook which I can import with ``pandas`` for the next phase in my analysis.
 
 As a current Natural Language Processing (NLP) student, I am interested in ameliorating the usefulness of this program by using sentiment
-analysis and classification (perhaps via a neural net) to help gague the viability of jobs per location. Unfortunately, that will probably
+analysis and classification (perhaps via a neural net) to help gauge the viability of jobs per location. Unfortunately, that will probably
 happen in the distant future as I barely have sufficient time to write this readme file.
 
 .. image:: ./readme_images/job-search-showcase.png
     :width: 800
-    :alt: Showcase screenshots of command-line interface and results
+    :alt: Showcase screenshots of the command-line interface and the results
 
 
 .. contents:: Contents
@@ -96,7 +96,7 @@ Refer to the following image as a reference:
 
 .. image:: ./readme_images/location-file-example.png
     :width: 250
-    :alt: Screenshot of example CSV location file
+    :alt: Screenshot of an example CSV location file
 
 Execute!
 --------
@@ -120,23 +120,23 @@ Refer to the ``help menu`` depicted below by running ``python3 jobsearch.py -h``
         --stopindex  <int>     0-based row index in CSV file to stop after (inclusive).
 
     Examples (single search):
-    jobsearch.py -l "Johnson City, TN"
-    jobsearch.py -l "Tokyo" -u https://jp.indeed.com
-    jobsearch.py -l "Bengaluru" -u https://in.indeed.com --save false
+      jobsearch.py -l "Johnson City, TN"
+      jobsearch.py -l "Tokyo" -u https://jp.indeed.com
+      jobsearch.py -l "Bengaluru" -u https://in.indeed.com --save false
 
     Examples (batch search):
-    jobsearch.py -c locations/southeast-cities.csv
-    jobsearch.py -c locations/indian-cities.csv -u https://in.indeed.com
-    jobsearch.py -c locations/southeast-cities.csv --startindex 10
-    jobsearch.py -c locations/southeast-cities.csv --stopindex 10
-    jobsearch.py -c locations/southeast-cities.csv --startindex 10 --stopindex 20
+      jobsearch.py -c locations/southeast-cities.csv
+      jobsearch.py -c locations/indian-cities.csv -u https://in.indeed.com
+      jobsearch.py -c locations/southeast-cities.csv --startindex 10
+      jobsearch.py -c locations/southeast-cities.csv --stopindex 10
+      jobsearch.py -c locations/southeast-cities.csv --startindex 10 --stopindex 20
 
     Locations CSV file format
-    Each row can have one or two locations (e.g. city or city, region) but no more.
-    The first location column should be the second column from the left. The leftmost
-    column should be titled as ID.
+      Each row can have one or two locations (e.g. city or city, region) but no more.
+      The first location column should be the second column from the left. The leftmost
+      column should be titled as ID.
 
-    The first row may be used as the column names.
+      The first row may be used as the column names.
 
     Example file format:
         ID  City        State
@@ -162,7 +162,7 @@ Assume we execute the script as such:
 
     python3 jobsearch.py -c ./locations/indeed_job_search_locations.csv --startindex 1 --stopindex 3
 
-Next we enter our job query. You can use boolean logic if you'd like:
+Next we enter our job query. You can use Boolean logic if you'd like:
 
 .. code::
 
@@ -195,7 +195,7 @@ features the results for each location searched from the locations CSV file.
 
 .. image:: ./readme_images/job-search-results.png
     :width: 620
-    :alt: Screenshot of scraped job search data in Excel worksheet
+    :alt: Screenshot of scraped job search data in an Excel worksheet
 
 
 The locations searched, the entered job query, and the resulting URLs from which the results were scraped are stored in the Excel
@@ -203,17 +203,16 @@ workbook with ``bulk-urls-searched.xlsx`` in its name.
 
 .. image:: ./readme_images/url-search-results.png
     :width: 620
-    :alt: Screenshot of locations searched, entered job query, and the resulting URLs in Excel worksheet
+    :alt: Screenshot of locations searched, entered job query, and the resulting URLs in an Excel worksheet
 
 
 Single Searches
 ################
 
-Single searches produce a similar Excel workbook file except a URL column lists the URL from which the results were scraped
-in the same file for convenience.
+A single search produces a similar Excel workbook file but for convenience, the worksheet also has a URL column listing the URL
+of the page which the program scraped its results from.
 
-NOTE: It is important that when you perform a single search, if your location is more than one word, it is enclosed in
-quotation marks, e.g.,
+**NOTE**: When you perform a single search, if your location is more than one word, it is important that you enclose your query in quotation marks, e.g.,
 
 .. code:: bash
 
