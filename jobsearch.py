@@ -85,7 +85,7 @@ def main():
         elif args[i] == '-c' or args[i] == '--csvfile':
             csvfile = args[i+1]
             single_search = False
-        elif args[i] == '-f' or args[i] == '--filename': # Custom filename
+        elif args[i] == '-f' or args[i] == '--file': # Custom filename
             filename = args[i+1]
         elif args[i] == '-s' or args[i] == '--save':
             if args[i+1].lower() == 'false':
