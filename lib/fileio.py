@@ -14,9 +14,9 @@ def load_locations_from_CSV(file, location_col1='City', location_col2='State', i
     try:
         global locations_df
         locations_df =  pd.read_csv(file, index_col=[index_col]) if index else pd.read_csv(file)
-        return locations_df, True
+        return True, locations_df
     except:
-        return pd.DataFrame(), False
+        return False, pd.DataFrame()
 
 
 def export_single_dataframe_to_excel(df, url, filename, sheet_name):

@@ -108,24 +108,30 @@ Refer to the ``help menu`` depicted below by running ``python3 jobsearch.py -h``
     Usage (help):              jobsearch.py -h, jobsearch.py --help
 
     Usage (single search):     jobsearch.py -l "<location name>" [options]
-    Options:
-        -u, --url <Indeed URL> Taylor URL to country.
-        -s, --save <boolean>   True if unspecified. False if false value is given.     
+      Options:
+        -f, --file <file name> Custom file name (can include path).
+        -u, --url <Indeed URL> Tailor URL to country.
+        -s, --save <boolean>   True if unspecified. False if false value is given.
 
     Usage (batch search):      jobsearch.py -c <locations CSV file> [options]
-    Options:
-        -u, --url <Indeed URL> Taylor URL to country.
-        -s, --save <boolean>   True if unspecified. False if false value is given.     
+      Options:
+        -f, --file <file name> Custom file name (can include path).
+        -u, --url <Indeed URL> Tailor URL to country.
+        -s, --save <boolean>   True if unspecified. False if false value is given.
         --startindex <int>     0-based row index in CSV file to start from (inclusive).
         --stopindex  <int>     0-based row index in CSV file to stop after (inclusive).
 
     Examples (single search):
       jobsearch.py -l "Johnson City, TN"
       jobsearch.py -l "Tokyo" -u https://jp.indeed.com
+      jobsearch.py -l "Tokyo" -u https://jp.indeed.com -f "C:\Users\User\Desktop\ty-job-search"
+      jobsearch.py -l "Tokyo" -u https://jp.indeed.com -f /home/user/Desktop/ty-job-search
       jobsearch.py -l "Bengaluru" -u https://in.indeed.com --save false
 
     Examples (batch search):
       jobsearch.py -c locations/southeast-cities.csv
+      jobsearch.py -c locations/southeast-cities.csv -f "C:\Users\User\Desktop\SE-jobs-search"
+      jobsearch.py -c locations/southeast-cities.csv -f /home/user/Desktop/SE-jobs-search
       jobsearch.py -c locations/indian-cities.csv -u https://in.indeed.com
       jobsearch.py -c locations/southeast-cities.csv --startindex 10
       jobsearch.py -c locations/southeast-cities.csv --stopindex 10
@@ -138,23 +144,28 @@ Refer to the ``help menu`` depicted below by running ``python3 jobsearch.py -h``
 
       The first row may be used as the column names.
 
-    Example file format:
+      Example file format:
         ID  City        State
         50  Birmingham  AL
         46  Richmond    KY
         38  Georgetown  KY
         36  Greenville  NC
 
+    Saved Files
+      If no file path is specificied (using the -f argument)
+      the resulting files are saved in the searched_jobs folder.
+
+
 Saved Files
 ###########
-All files are saved in the **searched_jobs** folder. For more information, refer to the **Bulk Search Example** below.
+If no file path is specificied (using the -f argument) the resulting files are saved in the **searched_jobs** folder.
 
 
 Bulk Search Example
 ###################
 
 Understanding ``startindex``, ``stopindex``
----------------------------------------
+-------------------------------------------
 
 Assume we execute the script as such:
 
@@ -187,8 +198,8 @@ locations in the file will be searched (the ``stopindex`` is inclusive):
 The Results
 -----------
 
-The results are stored in the ``searched_jobs`` folder. The first part of each file name (before the underscore) is a timestamp
-of when the data was scraped.
+The results are stored in the **searched_jobs** folder (unless a custom path was used in the file argument. The first part of each
+default file name (before the underscore) is a timestamp of when the data was scraped.
 
 The scraped job-search data are stored in the Excel workbook with ``bulk-job-searches.xlsx`` in its name. Each sheet in the workbook
 features the results for each location searched from the locations CSV file.
@@ -210,7 +221,7 @@ Single Searches
 ################
 
 A single search produces a similar Excel workbook file but for convenience, the worksheet also has a URL column listing the URL
-of the page from which the program scraped its results.
+of the page from which the program scraped its results. The workbook name will end with ``single-job-search``.
 
 **NOTE**: When you perform a single search, if your location is more than one word, it is important that you enclose your query in quotation marks, e.g.,
 
