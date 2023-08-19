@@ -115,6 +115,9 @@ def single_search(location, job_query, url='https://indeed.com/', save_to_file=T
     try:
         url, source, timestamp = get_searched_page(job_query, location, url)
         results_df = scraper.scrape_job_details(source)
+    except KeyError as ke:
+        print("KeyError: " + str(ke))
+        print("\nURL searched:\n" + url)
     except Exception as e:
         print(e)
         print("\nURL searched:\n" + url)
