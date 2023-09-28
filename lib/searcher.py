@@ -1,3 +1,4 @@
+
 from . import fileio
 from . import scraper
 
@@ -7,7 +8,6 @@ from time import sleep
 
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
-from webdriver_manager.chrome import ChromeDriverManager
 
 import os
 import re
@@ -20,11 +20,9 @@ searched_urls_map = {}
 # TODO: Convert this module to IndeedSearch class eventually. That way this can be more
 # than a command line tool. I should be able to integrate it with other code.
 
-def init_driver(log_level=3):
+def init_driver():
     global driver
-    driver = webdriver.Chrome(ChromeDriverManager().install())
-    options = driver.create_options()
-    options.add_argument(f"log-level={log_level}")
+    driver = webdriver.Chrome()
 
 
 def close_driver():
@@ -86,7 +84,7 @@ def save_dataframes_map_to_file(filename, filename_timestamp, job_query):
 
 def get_searched_page(job_query, location, url='https://indeed.com/'):
     driver.get(url)
-    sleep(3)
+    sleep(4)
     query_field = driver.find_element('xpath', '//*[@id="text-input-what"]')
     query_field.send_keys(Keys.CONTROL + "a")
     query_field.send_keys(Keys.DELETE)
