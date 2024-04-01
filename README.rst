@@ -25,6 +25,15 @@ happen in the distant future as I barely have sufficient time to write this read
 
 .. contents:: Contents
 
+Changes
+########
+
+- Added query argument (-q or --q)
+- Treat a job's rating as 0 if no rating is present (no empty rating cells)
+- Removed support for ID column in locations CSV file
+- Updated scraper module to adapt to LinkedIn's HTML format changes.
+- Adapted `jobsearch` module so it can be imported from external modules (which can call on `jobsearch.single_search` and `jobsearch.batch_search`)
+
 
 A Note for the Instructions
 ###########################
@@ -36,7 +45,7 @@ Requirements
 ############
 
 - Device with Internet access and Google Chrome web browser installed
-- Python 3.10.6 on device
+- Python 3.10.6 or newer on device
 
 Setup
 #####
@@ -81,16 +90,15 @@ To deactivate it (when you want to use your user Python environment), simply typ
 (You will have to use ``pip3`` in Linux)
 
 
-Usage
-#####
+Usage (command line)
+####################
 
 For Bulk Searching
 ------------------
-For bulk searching, you will need to feed in a CSV file of your locations. The CSV file format is specific:
+For bulk searching, you will need to feed in a CSV file of your locations. The CSV file format has been simplified:
 
-1. The first (leftmost) column should be labeled as "ID".
-2. The second column from the left must contain a location name.
-3. The third column from the left may be used to specify a more general region (e.g., state, providence) or it may be left blank.
+1. The first column from the left must contain a location name.
+2. The second column from the left may be used to specify a more general region (e.g., state, providence) or it may be left blank.
 
 Refer to the following image as a reference:
 
@@ -110,26 +118,28 @@ Refer to the ``help menu`` depicted below by running ``python3 jobsearch.py -h``
     Usage (single search):     jobsearch.py -l "<location name>" [options]
       Options:
         -f, --file <file name> Custom file name (can include path).
-        -u, --url <Indeed URL> Tailor URL to country.
+        -q, --query <query>    The job search query.
+        -u, --url <Indeed URL> Tailor URL to country (defaults to USA).
         -s, --save <boolean>   True if unspecified. False if false value is given.
 
     Usage (batch search):      jobsearch.py -c <locations CSV file> [options]
       Options:
         -f, --file <file name> Custom file name (can include path).
-        -u, --url <Indeed URL> Tailor URL to country.
+        -q, --query <query>    The job search query.
+        -u, --url <Indeed URL> Tailor URL to country (defaults to USA).
         -s, --save <boolean>   True if unspecified. False if false value is given.
         --startindex <int>     0-based row index in CSV file to start from (inclusive).
         --stopindex  <int>     0-based row index in CSV file to stop after (inclusive).
 
     Examples (single search):
-      jobsearch.py -l "Johnson City, TN"
-      jobsearch.py -l "Tokyo" -u https://jp.indeed.com
+      jobsearch.py -l "Johnson City, TN" -q "('software engineer' OR 'software developer')"
+      jobsearch.py -l "Tokyo" -u https://jp.indeed.com -q "software engineer"
       jobsearch.py -l "Tokyo" -u https://jp.indeed.com -f "C:\Users\User\Desktop\ty-job-search"
       jobsearch.py -l "Tokyo" -u https://jp.indeed.com -f /home/user/Desktop/ty-job-search
       jobsearch.py -l "Bengaluru" -u https://in.indeed.com --save false
 
     Examples (batch search):
-      jobsearch.py -c locations/southeast-cities.csv
+      jobsearch.py -c locations/southeast-cities. -q "('software engineer' OR 'software developer')"
       jobsearch.py -c locations/southeast-cities.csv -f "C:\Users\User\Desktop\SE-jobs-search"
       jobsearch.py -c locations/southeast-cities.csv -f /home/user/Desktop/SE-jobs-search
       jobsearch.py -c locations/indian-cities.csv -u https://in.indeed.com
@@ -139,17 +149,15 @@ Refer to the ``help menu`` depicted below by running ``python3 jobsearch.py -h``
 
     Locations CSV file format
       Each row can have one or two locations (e.g. city or city, region) but no more.
-      The first location column should be the second column from the left. The leftmost
-      column should be titled as ID.
+      The left column should specify the city. The right column should specify the region/province/state.
 
       The first row may be used as the column names.
 
       Example file format:
-        ID  City        State
-        50  Birmingham  AL
-        46  Richmond    KY
-        38  Georgetown  KY
-        36  Greenville  NC
+        City        State
+        Birmingham  AL
+        Richmond    KY
+        Georgetown  KY
 
     Saved Files
       If no file path is specificied (using the -f argument)
@@ -171,7 +179,7 @@ Assume we execute the script as such:
 
 .. code:: bash
 
-    python3 jobsearch.py -c ./locations/indeed_job_search_locations.csv --startindex 1 --stopindex 3
+    python3 jobsearch.py -c ./locations/southeast-cities.csv --startindex 1 --stopindex 3
 
 Next we enter our job query. You can use Boolean logic if you'd like:
 
@@ -179,19 +187,20 @@ Next we enter our job query. You can use Boolean logic if you'd like:
 
     Enter your query >>"mechanical" and "engineer" and not "electrical"
 
+
 The indexing is zero-based (as a programmer, it's the only way for me!). What that means is that the second, third, and fourth
 locations in the file will be searched (the ``stopindex`` is inclusive):
 
-*locations/indeed_job_search_locations.csv*
+*locations/southeast-cities.csv*
 
 .. code-block::
 
-    ID	City		State
-    451	Raleigh		NC  <-- Index 0
-    445	Nashville	TN  <-- Index 1 (start here)
-    442	Norfolk		VA
-    438	Hampton		VA  <-- Index 3 (stop after scraping for this location)
-    420	Murfreesboro	TN
+      City		State
+    Raleigh		NC  <-- Index 0
+    Nashville	TN  <-- Index 1 (start here)
+    Norfolk		VA
+    Hampton		VA  <-- Index 3 (stop after scraping for this location)
+    Murfreesboro	TN
     . . .
 
 
@@ -228,4 +237,5 @@ of the page from which the program scraped its results. The workbook name will e
 .. code:: bash
 
     python3 jobsearch.py -l "Johnson City, TN"
+    python3 jobsearch.py -l "Chicago, IL" -q "('software engineer' OR 'software developer')"
 

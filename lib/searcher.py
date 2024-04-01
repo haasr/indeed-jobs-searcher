@@ -147,8 +147,8 @@ def batch_search(locations_file, job_query, url='https://indeed.com/', start_ind
         stop_index = get_stop_index(stop_index, num_rows=locations_df.shape[0])
 
         for i in range(start_index, stop_index):
-            location = locations_df.iloc[i][1]
-            try: location += ", " + locations_df.iloc[i][2] # Append loc2 if it exists
+            location = locations_df.iloc[i][0]
+            try: location += ", " + locations_df.iloc[i][1] # Append loc2 if it exists
             except: pass
 
             try:

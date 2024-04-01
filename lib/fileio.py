@@ -10,10 +10,10 @@ def clear_locations():
     return True
 
 
-def load_locations_from_CSV(file, location_col1='City', location_col2='State', index=False, index_col='ID'):
+def load_locations_from_CSV(file):
     try:
         global locations_df
-        locations_df =  pd.read_csv(file, index_col=[index_col]) if index else pd.read_csv(file)
+        locations_df =  pd.read_csv(file)
         return True, locations_df
     except:
         return False, pd.DataFrame()
