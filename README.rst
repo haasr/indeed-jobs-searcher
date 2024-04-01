@@ -8,13 +8,13 @@ It would be remiss of me if I didn't say that I used Sidharth's project (explain
 as the base of this job searcher. Running Sidharth's code showed me a workable proof of concept (after tweaking the code) for extracting
 and storing useful job information from Indeed, using Selenium and BeautifulSoup -- neither one of which I have much experience with.
 
-From there I scaled up for my needs. I am using my data analytics skills to compile a list of top cities where I wish to live and work
-after I graduate (based on several factors: different measures of diversity, cost of living, proximity to friends and family, etc.).
-Part of my analysis is figuring out which of my prospective cities has the jobs I'm looking for. Hence this project was born. I derive a
+From there I scaled up for my needs. I used my data analytics skills to compile a list of top cities where I wish to live and work
+after I graduated (based on several factors: different measures of diversity, cost of living, proximity to friends and family, etc.).
+Part of my analysis was figuring out which of my prospective cities has the jobs I'm looking for. Hence this project was born. I derive a
 CSV file of cities by printing out a ``DataFrame`` from my analysis and then I plug the CSV file into my jobs searcher to capture available
 jobs for each location into an Excel workbook which I can import with ``pandas`` for the next phase in my analysis.
 
-As a current Natural Language Processing (NLP) student, I am interested in ameliorating the usefulness of this program by using sentiment
+As a former Natural Language Processing (NLP) student, I am interested in ameliorating the usefulness of this program by using sentiment
 analysis and classification (perhaps via a neural net) to help gauge the viability of jobs per location. Unfortunately, that will probably
 happen in the distant future as I barely have sufficient time to write this readme file.
 
