@@ -195,12 +195,12 @@ locations in the file will be searched (the ``stopindex`` is inclusive):
 
 .. code-block::
 
-      City		State
-    Raleigh		NC  <-- Index 0
-    Nashville	TN  <-- Index 1 (start here)
-    Norfolk		VA
-    Hampton		VA  <-- Index 3 (stop after scraping for this location)
-    Murfreesboro	TN
+    City         State
+    Raleigh      NC  <-- Index 0
+    Nashville    TN  <-- Index 1 (start here)
+    Norfolk      VA
+    Hampton      VA  <-- Index 3 (stop after scraping for this location)
+    Murfreesboro TN
     . . .
 
 
