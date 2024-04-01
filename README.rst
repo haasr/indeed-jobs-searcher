@@ -28,7 +28,7 @@ happen in the distant future as I barely have sufficient time to write this read
 Changes
 ########
 
-- Added query argument (-q or --q)
+- Added query argument (-q or --query)
 - Treat a job's rating as 0 if no rating is present (no empty rating cells)
 - Removed support for ID column in locations CSV file
 - Updated scraper module to adapt to LinkedIn's HTML format changes.
