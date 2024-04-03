@@ -45,7 +45,7 @@ Requirements
 ############
 
 - Device with Internet access and Google Chrome web browser installed
-- Python 3.10.6 or newer on device
+- Python 3.11.5 or newer on device
 
 Setup
 #####
