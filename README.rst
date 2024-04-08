@@ -139,7 +139,7 @@ Refer to the ``help menu`` depicted below by running ``python3 jobsearch.py -h``
       jobsearch.py -l "Bengaluru" -u https://in.indeed.com --save false
 
     Examples (batch search):
-      jobsearch.py -c locations/southeast-cities. -q "('software engineer' OR 'software developer')"
+      jobsearch.py -c locations/southeast-cities.csv -q "('software engineer' OR 'software developer')"
       jobsearch.py -c locations/southeast-cities.csv -f "C:\Users\User\Desktop\SE-jobs-search"
       jobsearch.py -c locations/southeast-cities.csv -f /home/user/Desktop/SE-jobs-search
       jobsearch.py -c locations/indian-cities.csv -u https://in.indeed.com

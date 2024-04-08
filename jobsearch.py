@@ -38,7 +38,7 @@ def print_usage():
         f"\n  jobsearch.py -l \"Bengaluru\" -u https://in.indeed.com --save false"
 
         f"\n\n{colors['magenta']}Examples (batch search):{colors['white']}"
-        f"\n  jobsearch.py -c locations/southeast-cities. -q \"('software engineer' OR 'software developer')\""
+        f"\n  jobsearch.py -c locations/southeast-cities.csv -q \"('software engineer' OR 'software developer')\""
         f"\n  jobsearch.py -c locations/southeast-cities.csv -f \"C:\\Users\\User\\Desktop\\SE-jobs-search\""
         f"\n  jobsearch.py -c locations/southeast-cities.csv -f /home/user/Desktop/SE-jobs-search"
         f"\n  jobsearch.py -c locations/indian-cities.csv -u https://in.indeed.com"
