@@ -41,7 +41,7 @@ My examples use the command ``python3`` which is specific to Linux. If you are u
 Requirements
 ############
 
-- Device with Internet access and Google Chrome web browser installed
+- Device with Internet access and Google Chrome web browser installed (AND UPDATED)
 - Python 3.11.5 or newer on device
 
 Setup
