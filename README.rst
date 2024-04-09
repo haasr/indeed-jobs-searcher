@@ -4,15 +4,17 @@ indeed-jobs-searcher
 
 Simple CLI-based tool for extracting and storing relevant job info. from bulk job searches on indeed.com.
 
-It would be remiss of me if I didn't say that I used Sidharth's project (explained here: https://www.pycodemates.com/2022/01/Indeed-jobs-scraping-with-python-bs4-selenium-and-pandas.html)
-as the base of this job searcher. Running Sidharth's code showed me a workable proof of concept (after tweaking the code) for extracting
-and storing useful job information from Indeed, using Selenium and BeautifulSoup -- neither one of which I have much experience with.
+This project was originally based on Sidharth's Indeed scraper (explained here: https://www.pycodemates.com/2022/01/Indeed-jobs-scraping-with-python-bs4-selenium-and-pandas.html).
+Running Sidharth's code showed me a workable proof of concept (after tweaking the code) for extracting
+and storing useful job information from Indeed, using Selenium and BeautifulSoup. It has since required
+changes due to updates of the Selenium package and changes in the structure of Indeed's HTML.
 
-From there I scaled up for my needs. I used my data analytics skills to compile a list of top cities where I wish to live and work
-after I graduated (based on several factors: different measures of diversity, cost of living, proximity to friends and family, etc.).
-Part of my analysis was figuring out which of my prospective cities has the jobs I'm looking for. Hence this project was born. I derive a
-CSV file of cities by printing out a ``DataFrame`` from my analysis and then I plug the CSV file into my jobs searcher to capture available
-jobs for each location into an Excel workbook which I can import with ``pandas`` for the next phase in my analysis.
+I originally developed this program to help me find a job for when I finished my Master's degree. I'm now happily employed, but I'll
+share a bit about how this project fit into my larger personal project: I used my data analytics skills to compile a list of top cities where
+I wished to live and work (based on several factors: different measures of diversity, cost of living, proximity to friends and family, etc.).
+Part of my analysis was figuring out which of my prospective cities had the jobs I was looking for. Hence this project was born. I derived a
+CSV file of cities by printing out a ``DataFrame`` from my analysis and then I plugged the CSV file into my jobs searcher to capture available
+jobs for each location into an Excel workbook which I imported with ``pandas`` for the next phase in my analysis.
 
 
 .. image:: ./readme_images/job-search-showcase.png
