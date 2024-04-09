@@ -14,9 +14,6 @@ Part of my analysis was figuring out which of my prospective cities has the jobs
 CSV file of cities by printing out a ``DataFrame`` from my analysis and then I plug the CSV file into my jobs searcher to capture available
 jobs for each location into an Excel workbook which I can import with ``pandas`` for the next phase in my analysis.
 
-As a former Natural Language Processing (NLP) student, I am interested in ameliorating the usefulness of this program by using sentiment
-analysis and classification (perhaps via a neural net) to help gauge the viability of jobs per location. Unfortunately, that will probably
-happen in the distant future as I barely have sufficient time to write this readme file.
 
 .. image:: ./readme_images/job-search-showcase.png
     :width: 800
