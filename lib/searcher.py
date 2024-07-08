@@ -8,6 +8,9 @@ from time import sleep
 
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
+from selenium.webdriver.chrome.options import Options
+from selenium.webdriver.chrome.service import Service
+from webdriver_manager.chrome import ChromeDriverManager
 
 import os
 import re
@@ -17,13 +20,18 @@ driver = None
 dataframes_map = {}
 searched_urls_map = {}
 
+options = Options()
+options.add_argument('--headless')
+options.add_argument('--no-sandbox')
+options.add_argument('--disable-dev-shm-usage')
+
 # TODO: Convert this module to IndeedSearch class eventually. That way this can be more
 # than a command line tool. I should be able to integrate it with other code.
 
 def init_driver():
     global driver
-    driver = webdriver.Chrome()
-
+    #driver = webdriver.Chrome()
+    driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=options)
 
 def close_driver():
     global driver
