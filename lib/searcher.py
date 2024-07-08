@@ -118,6 +118,9 @@ def get_searched_page(job_query, location, url='https://indeed.com/'):
 def single_search(location, job_query, url='https://indeed.com/', save_to_file=True, scraped_filename=None):
     scraped_filename = get_scraped_filename(scraped_filename, get_search_timestamp(), 
                                                 suffix='_single-job-searches.xlsx')
+
+    results_df = None
+
     try:
         url, source, timestamp = get_searched_page(job_query, location, url)
         results_df = scraper.scrape_job_details(source)
