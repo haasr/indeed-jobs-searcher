@@ -21,7 +21,7 @@ dataframes_map = {}
 searched_urls_map = {}
 
 options = Options()
-options.add_argument('--headless')
+options.add_argument('--headless') # Comment out if you wish to see it.
 options.add_argument('--no-sandbox')
 options.add_argument('--disable-dev-shm-usage')
 
@@ -75,7 +75,7 @@ def get_scraped_filename(filename, timestamp, suffix='_bulk-job-searches.xlsx'):
 def get_search_sheet_name(location, timestamp):
     # Apparently some programs cannot read sheets with names over 31 chars so timestamp length will just be 30.
     loc = re.sub(r'[^A-Za-z0-9 ]+', '', location[:16]) # If name too long, shorten it to get full timestamp
-    tokens = re.split('\s+', loc)
+    tokens = re.split(r'\s+', loc)
     location_fname = "-".join(tokens)
     return (location_fname + '_' + timestamp)
 
@@ -157,9 +157,9 @@ def batch_search(locations_file, job_query, url='https://indeed.com/', start_ind
         scraped_filename = get_scraped_filename(scraped_filename, timestamp=filename_timestamp)
         stop_index = get_stop_index(stop_index, num_rows=locations_df.shape[0])
 
-        for i in range(start_index, stop_index):
-            location = locations_df.iloc[i][0]
-            try: location += ", " + locations_df.iloc[i][1] # Append loc2 if it exists
+        for i, row in locations_df.iloc[start_index:stop_index].iterrows():
+            location = row[0]
+            try: location += ", " + row[1]
             except: pass
 
             try:

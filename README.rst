@@ -27,11 +27,9 @@ jobs for each location into an Excel workbook which I imported with ``pandas`` f
 Changes
 ########
 
-- Added query argument (-q or --query)
-- Treat a job's rating as 0 if no rating is present (no empty rating cells)
-- Removed support for ID column in locations CSV file
-- Updated scraper module to adapt to LinkedIn's HTML format changes.
-- Adapted `jobsearch` module so it can be imported from external modules (which can call on `jobsearch.single_search` and `jobsearch.batch_search`)
+- Upgraded packages from Python 3.11.5 to Python 3.12.4.
+- Updated scraper module to adapt to LinkedIn's HTML format changes (the company div class name changed).
+- Updated `fileio` module to use the `xlsxwriter` engine when exporting dataframes (`openpyxl` is a pain).
 
 
 A Note for the Instructions
@@ -44,7 +42,8 @@ Requirements
 ############
 
 - Device with Internet access and Google Chrome web browser installed (AND UPDATED)
-- Python 3.11.5 or newer on device
+- Python 3.12.4 or newer on device
+
 
 Setup
 #####

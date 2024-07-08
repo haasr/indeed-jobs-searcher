@@ -13,10 +13,10 @@ def scrape_job_details(page_source):
    
     jobs_list = []    
     for post in content.select('.job_seen_beacon'):
-
+        print(post)
         data = {
             "job_title": post.find('span', id=lambda x: x and x.startswith('jobTitle')).text,
-            "company": post.find('span', class_='css-92r8pb').text,
+            "company": post.find('span', class_='css-63koeb').text,
             "location": post.find('div', class_='css-1p0sjhy').text,
             "posted_date":  post.find('span', attrs={'data-testid': 'myJobsStateDate'}).text,
             "job_description": post.find('div', class_='css-9446fg').text
