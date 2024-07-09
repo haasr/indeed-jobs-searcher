@@ -21,7 +21,6 @@ dataframes_map = {}
 searched_urls_map = {}
 
 options = Options()
-options.add_argument('--headless') # Comment out if you wish to see it.
 options.add_argument('--no-sandbox')
 options.add_argument('--disable-dev-shm-usage')
 
