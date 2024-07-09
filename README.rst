@@ -17,7 +17,7 @@ CSV file of cities by printing out a ``DataFrame`` from my analysis and then I p
 jobs for each location into an Excel workbook which I imported with ``pandas`` for the next phase in my analysis.
 
 
-.. image:: ./readme_images/job-search-showcase.png
+.. image:: readme_images/job-search-showcase.png
     :width: 800
     :alt: Showcase screenshots of the command-line interface and the results
 
@@ -100,7 +100,7 @@ For bulk searching, you will need to feed in a CSV file of your locations. The C
 
 Refer to the following image as a reference:
 
-.. image:: ./readme_images/location-file-example.png
+.. image:: readme_images/location-file-example.png
     :width: 250
     :alt: Screenshot of an example CSV location file
 
@@ -211,7 +211,7 @@ default file name (before the underscore) is a timestamp of when the data was sc
 The scraped job-search data are stored in the Excel workbook with ``bulk-job-searches.xlsx`` in its name. Each sheet in the workbook
 features the results for each location searched from the locations CSV file.
 
-.. image:: ./readme_images/job-search-results.png
+.. image:: readme_images/job-search-results.png
     :width: 620
     :alt: Screenshot of scraped job search data in an Excel worksheet
 
@@ -219,7 +219,7 @@ features the results for each location searched from the locations CSV file.
 The locations searched, the entered job query, and the resulting URLs from which the results were scraped are stored in the Excel
 workbook with ``bulk-urls-searched.xlsx`` in its name.
 
-.. image:: ./readme_images/url-search-results.png
+.. image:: readme_images/url-search-results.png
     :width: 620
     :alt: Screenshot of locations searched, entered job query, and the resulting URLs in an Excel worksheet
 
